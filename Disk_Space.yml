@@ -1,7 +1,7 @@
 ---
 - name: Check Disk Usage Node Servers
-hosts: nodes
-gather_facts: no
+  hosts: nodes
+  gather_facts: no
 tasks:
   - name: Run df -h Command
     command: df -h
