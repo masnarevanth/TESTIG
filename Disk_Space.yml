@@ -1,0 +1,12 @@
+---
+- name: Check Disk Usage Node Servers
+hosts: nodes
+gather_facts: no
+tasks:
+  - name: Run df -h Command
+    command: df -h
+    register: disk_usage
+
+  - name: Display Disk Usage
+    dbug:
+      msg: "{{ disk usage.stdouts_lines }}"
